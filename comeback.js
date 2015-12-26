@@ -38,8 +38,11 @@ orb.connect(function() {
     var diff_y = odo_bgn_y-dist_y;
     deg_rad = Math.atan2(diff_y, diff_x);
     deg_ang = deg_rad/(Math.PI/180);
+    if(deg_ang < 0) {
+      deg_ang = 360+deg_ang;
+    }
     console.log(deg_ang);
-    orb.roll(70, deg_ang);
+    orb.roll(120, deg_ang);
     changeCalmColor();
   };
 
